@@ -20,8 +20,12 @@ print("hi welcome to badclock")
 print("i guess you want to know what time it is")
 input("[Press Enter to continue...]")
 
+# initialise loop
+correct = "False"
 
+while bool(correct) != True:
 
+    break
 
 
 now = datetime.datetime.now().strftime("%H:%M")
