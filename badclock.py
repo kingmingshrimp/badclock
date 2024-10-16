@@ -30,7 +30,6 @@ def badcockArt():
 
 def goodclockArt():
   print(r"""
-  
                         _      _            _    
                        | |    | |          | |   
    __ _  ___   ___   __| | ___| | ___   ___| | __
@@ -40,6 +39,33 @@ def goodclockArt():
    __/ |                                         
   |___/                                          
   
+  """)
+
+def goodcock():
+  print(r"""
+                        _                _
+                       | |              | |
+   __ _  ___   ___   __| | ___ ___   ___| | __
+  / _` |/ _ \ / _ \ / _` |/ __/ _ \ / __| |/ /
+ | (_| | (_) | (_) | (_| | (_| (_) | (__|   <
+  \__, |\___/ \___/ \__,_|\___\___/ \___|_|\_\
+   __/ |
+  |___/
+
+  """)
+
+def goodcat():
+  print(r"""
+          |\___/|
+         =) oYo (=
+          \  ^  /
+           )=*=(
+          /     \
+          |     |
+         /| | | |\
+         \| | |_|/\
+         //_// ___/
+             \_)
   """)
 
 def usrContinue():
@@ -80,10 +106,10 @@ while i == 0:
       usrContinue()
 
   except ValueError:
-      clearScreen()
-      badcockArt()
-      print("hey are you stupid. you need to enter a valid 24hr time")
-      usrContinue()
+    clearScreen()
+    badcockArt()
+    print("hey are you stupid. you need to enter a valid 24hr time")
+    usrContinue()
 
 
     
