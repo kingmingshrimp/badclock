@@ -17,6 +17,17 @@ def badclockArt():
 
   """)
 
+def badcockArt():
+    print(r"""
+  _               _                _    
+ | |             | |              | |   
+ | |__   __ _  __| | ___ ___   ___| | __
+ | '_ \ / _` |/ _` |/ __/ _ \ / __| |/ /
+ | |_) | (_| | (_| | (_| (_) | (__|   < 
+ |_.__/ \__,_|\__,_|\___\___/ \___|_|\_\  
+
+  """)
+
 def usrContinue():
   input("\nPress Enter to continue or Crtl+C to quit:")
 
@@ -44,9 +55,7 @@ while i == 0:
   try:
     validUsrTime = datetime.datetime.strptime(usrTime, "%H:%M")
 
-    print(validUsrTime)
-
-    if validUsrTime == now:
+    if usrTime == now:
       print("woa. thats right")
       i += 1
       usrContinue()
@@ -56,6 +65,9 @@ while i == 0:
       usrContinue()
 
   except ValueError:
+
+      clearScreen()
+      badcockArt()
       print("hey are you stupid. you need to enter a valid 24hr time")
       usrContinue()
 
