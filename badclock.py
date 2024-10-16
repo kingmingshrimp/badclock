@@ -5,8 +5,8 @@ import os
 def clearScreen():
   os.system('cls' if os.name == 'nt' else 'clear')
 
-# print swag ascii art
-def badclockArt():
+# print swag ascii 
+def badclock():
   print(r""" 
   _               _      _            _    
  | |             | |    | |          | |   
@@ -17,7 +17,7 @@ def badclockArt():
 
   """)
 
-def badcockArt():
+def badcock():
     print(r"""
   _               _                _    
  | |             | |              | |   
@@ -28,7 +28,7 @@ def badcockArt():
 
   """)
 
-def goodclockArt():
+def goodclock():
   print(r"""
                         _      _            _    
                        | |    | |          | |   
@@ -72,7 +72,7 @@ def usrContinue():
   input("\nPress Enter to continue or Crtl+C to quit:")
 
 clearScreen()
-badclockArt()
+badclock()
 
 print("hi welcome to badclock")
 print("\ni guess you want to know what time it is")
@@ -83,7 +83,7 @@ i = 0
 while i == 0:
 
   clearScreen()
-  badclockArt()
+  badclock()
 
   # store the current time and ask the user for their guess
   now = datetime.datetime.now().strftime("%H:%M")
@@ -96,7 +96,7 @@ while i == 0:
     validUsrTime = datetime.datetime.strptime(usrTime, "%H:%M")
     if usrTime == now:
       clearScreen()
-      goodclockArt()
+      goodclock()
       print("woa. thats right")
       i += 1
       usrContinue()
@@ -107,7 +107,7 @@ while i == 0:
 
   except ValueError:
     clearScreen()
-    badcockArt()
+    badcock()
     print("hey are you stupid. you need to enter a valid 24hr time")
     usrContinue()
 
