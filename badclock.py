@@ -1,5 +1,10 @@
 import datetime
+import os
 
+# check for windows and clear the screen
+os.system('cls' if os.name == 'nt' else 'clear')
+
+# print swag ascii art
 print(r""" 
   _               _      _            _    
  | |             | |    | |          | |   
@@ -11,7 +16,9 @@ print(r"""
 """)
 
 
-print("hi welcome to badclock, i guess you want to know what time it is")
+print("hi welcome to badclock")
+print("i guess you want to know what time it is")
+input("[Press Enter to continue...]")
 
 
 
@@ -19,5 +26,9 @@ print("hi welcome to badclock, i guess you want to know what time it is")
 
 now = datetime.datetime.now().strftime("%H:%M")
 
-print(now)
-print(now)
+#answer = input("Enter yes or no: ")
+#if answer.lower() == "yes":
+#    print("YES!!!")
+#elif answer.lower() == "no":
+#    print("Oh no")
+#else: print("Please enter yes or no.")
