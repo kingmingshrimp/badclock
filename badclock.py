@@ -1,11 +1,13 @@
 import datetime
 import os
 
-# check for windows and clear the screen
-os.system('cls' if os.name == 'nt' else 'clear')
+# check for windows nt and clear the screen
+def clearScreen():
+  os.system('cls' if os.name == 'nt' else 'clear')
 
 # print swag ascii art
-print(r""" 
+def badclockArt():
+  print(r""" 
   _               _      _            _    
  | |             | |    | |          | |   
  | |__   __ _  __| | ___| | ___   ___| | __
@@ -13,26 +15,49 @@ print(r"""
  | |_) | (_| | (_| | (__| | (_) | (__|   < 
  |_.__/ \__,_|\__,_|\___|_|\___/ \___|_|\_\
 
-""")
+  """)
 
+def usrContinue():
+  input("\nPress Enter to continue or Crtl+C to quit:")
+
+clearScreen()
+badclockArt()
 
 print("hi welcome to badclock")
-print("i guess you want to know what time it is")
-input("[Press Enter to continue...]")
+print("\ni guess you want to know what time it is")
+usrContinue()
 
-# initialise loop
-correct = "False"
+# ask the user for the time, if it matches the real time then they win, if not try again
+i = 0
+while i == 0:
 
-while bool(correct) != True:
+  clearScreen()
+  badclockArt()
 
-    break
+  # store the current time and ask the user for their guess
+  now = datetime.datetime.now().strftime("%H:%M")
+
+  print("what time do you think it is?")
+  usrTime = input("\nEnter the current time [??:??]: ")
+
+  # check if the user entered a valid time and if they guessed the time right
+  try:
+    validUsrTime = datetime.datetime.strptime(usrTime, "%H:%M")
+
+    print(validUsrTime)
+
+    if validUsrTime == now:
+      print("woa. thats right")
+      i += 1
+      usrContinue()
+
+    else:
+      print("no... wrong..... try again")
+      usrContinue()
+
+  except ValueError:
+      print("hey are you stupid. you need to enter a valid 24hr time")
+      usrContinue()
 
 
-now = datetime.datetime.now().strftime("%H:%M")
-
-#answer = input("Enter yes or no: ")
-#if answer.lower() == "yes":
-#    print("YES!!!")
-#elif answer.lower() == "no":
-#    print("Oh no")
-#else: print("Please enter yes or no.")
+    
